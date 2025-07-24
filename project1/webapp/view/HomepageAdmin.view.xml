@@ -1,0 +1,45 @@
+<mvc:View controllerName="project1.controller.HomepageAdmin"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Home">
+        <content>
+            <Panel>
+                <VBox >
+
+                    <VBox alignItems="Center">
+                        <Title level="H1" text="Today's Service"></Title>
+                        <Button text="New Service" press=".onCreateService"/>
+                    </VBox>
+
+                    <List
+                        items="{ViewModel>/todayServices}"
+                        headerText="Bugünkü Servisler"
+                        noDataText="Servis yok.">
+                        <StandardListItem
+                            title="{ViewModel>title}"
+                            description="{ViewModel>description}"
+                            icon="sap-icon://wrench"/>
+                    </List>
+
+                    <Panel>
+                        <Title
+                            text="Bekleyen İş Emirleri"
+                            level="H3"
+                            class="sapUiSmallMarginTop"/>
+                        <List
+                            items="{ViewModel>/pendingOrders}"
+                            headerText="İş Emirleri"
+                            noDataText="Bekleyen iş emri yok."
+                            mode="Delete"
+                            delete=".onDeletePendingOrder">
+                            <StandardListItem
+                                title="{ViewModel>title}"
+                                description="{= 'Durum: ' + ${ViewModel>status} + ' | Teknisyen: ' + ${ViewModel>technician}}"
+                                icon="sap-icon://activities"/>
+                        </List>
+                    </Panel>
+                </VBox>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

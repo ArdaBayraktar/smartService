@@ -1,0 +1,20 @@
+<mvc:View controllerName="project1.controller.homepageUser"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="selam">
+    <Panel>
+            <VBox>
+                <Title level="H1" text="Bugünkü Servislerim"></Title>
+                <List 
+                    items="{ViewModel>/todayServices}" 
+                    mode="SingleSelectMaster" 
+                    itemPress=".onServicePress">
+                    <StandardListItem 
+                        title="{ViewModel>title}" 
+                        description="{ViewModel>device}" 
+                        type="Active" />
+                </List>
+            </VBox>
+        </Panel>
+    </Page>
+</mvc:View>

@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="newServiceDialog" title="Yeni Servis Talebi" class="sapUiPopupWithPadding">
+        <VBox class="sapUiSmallMargin">
+            <Label text="Ad Soyad" />
+            <Input id="inputName" placeholder="Ad Soyad" />
+
+            <Label text="Telefon" />
+            <Input id="inputPhone" placeholder="Telefon" />
+
+            <Label text="Cihaz Türü"/>
+            <Input id="inputDeviceType" placeholder="Örn: Klima"/>
+
+            <Label text="Teknisyen Seç"/>
+            <Select id="selectTechnician" items="{ViewModel>/technicians}" forceSelection="false">
+                <core:Item key="{ViewModel>id}" text="{ViewModel>name} ({ViewModel>specialty}) - {ViewModel>status}"/>
+            </Select>
+
+            <Label text="Randevu Zamanı"/>
+            <DateTimePicker id="inputDateTime" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="yyyy-MM-dd HH:mm"/>
+
+            <Label text="Marka" />
+            <Input id="inputBrand" placeholder="Marka" />
+
+            <Label text="Arıza Açıklaması" />
+            <TextArea id="inputDescription" placeholder="Arıza Açıklaması" rows="3" />
+            
+        </VBox>
+
+        <beginButton>
+            <Button text="Gönder" type="Emphasized" press=".onSubmitServiceRequest" />
+        </beginButton>
+
+        <endButton>
+            <Button text="İptal" press=".onCloseDialog" />
+        </endButton>
+        
+    </Dialog>
+    
+</core:FragmentDefinition>

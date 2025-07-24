@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="serviceDetailsDialog" title="Servis Detayları">
+        <VBox class="sapUiSmallMargin">
+            <Text text="Müşteri: {ViewModel>/selectedService/customer}" />
+            <Text text="Adres: {ViewModel>/selectedService/address}" />
+            <Text text="Cihaz: {ViewModel>/selectedService/device}" />
+            <Text text="Sorun: {ViewModel>/selectedService/issue}" />
+            <Text text="Teşhis: {ViewModel>/selectedService/diagnosis}" />
+
+            
+        </VBox>
+        <beginButton>
+            <Button text="İşlem Tamamlandı" type="Accept" press=".onCompleteService" />
+        </beginButton>
+        <endButton>
+            <Button text="Kapat" type="Reject" press=".onCloseDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

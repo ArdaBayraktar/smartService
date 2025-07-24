@@ -1,0 +1,14 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{ViewModel}">
+    <Panel >
+        <VBox class="sapUiSmallMargin" justifyContent="Center" alignItems="Center">
+                <Title level="H1" text="LOGIN"></Title>
+                <Input placeholder="Username" id="username" width="auto"/>
+                <Input placeholder="Password" id="password" type="Password" width="auto"/>
+                <Button text="Login" press="onLoginPress" width="auto"/>
+        </VBox>
+    </Panel>
+    </Page>
+</mvc:View>
